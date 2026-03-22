@@ -1,14 +1,71 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient as createBrowserClient } from './client';
+import { createClient as createServerClient } from './server';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+// Client-side supabase client
+export const supabase = createBrowserClient();
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Server-side supabase client
+export const supabaseServer = createServerClient();
+
+// Auth helper functions
+export const auth = {
+  // Get current user
+  async getUser() {
+    const { data: { user }, error } = await supabase.auth.getUser();
+    return { user, error };
+  },
+
+  // Sign up with email and password
+  async signUp(email: string, password: string, fullName: string) {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          full_name: fullName,
+        },
+      },
+    });
+    return { data, error };
+  },
+
+  // Sign in with email and password
+  async signIn(email: string, password: string) {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    return { data, error };
+  },
+
+  // Sign out
+  async signOut() {
+    const { error } = await supabase.auth.signOut();
+    return { error };
+  },
+
+  // Reset password
+  async resetPassword(email: string) {
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/update-password`,
+    });
+    return { data, error };
+  },
+
+  // Update password
+  async updatePassword(newPassword: string) {
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword,
+    });
+    return { data, error };
+  },
+};
 
 // Storage helper functions
 export const storage = {
   // Get public URL for website assets
   getAssetUrl: (path: string) => {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     return `${supabaseUrl}/storage/v1/object/public/website-assets/${path}`;
   },
 
