@@ -15,10 +15,10 @@ export default function Header() {
             <Image
               src={LOGO_URL}
               alt="Circle Dish - Cook. Share. Discover."
-              width={250}
-              height={75}
+              width={100}
+              height={25}
               priority
-              className="h-16 w-auto max-h-[75px]"
+              className="h-6 w-auto max-h-[25px]"
               unoptimized={!!process.env.NEXT_PUBLIC_STORAGE_URL}
             />
           </Link>
