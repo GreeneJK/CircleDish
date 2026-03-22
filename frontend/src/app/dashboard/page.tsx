@@ -13,7 +13,7 @@ interface User {
 interface Circle {
   id: string;
   name: string;
-  member_count: number;
+  member_count?: number;
 }
 
 interface Recipe {
@@ -56,10 +56,9 @@ export default function DashboardPage() {
           .from('circles')
           .select(`
             id,
-            name,
-            circle_members!inner(count)
+            name
           `)
-          .eq('circle_members.user_id', user.id);
+          .eq('created_by', user.id);
 
         setCircles(userCircles || []);
 

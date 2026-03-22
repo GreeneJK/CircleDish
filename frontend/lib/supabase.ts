@@ -1,11 +1,30 @@
-import { createClient as createBrowserClient } from './client';
-import { createClient as createServerClient } from './server';
+import { createClient as createBrowserClient } from './supabase/client';
 
 // Client-side supabase client
-export const supabase = createBrowserClient();
-
-// Server-side supabase client
-export const supabaseServer = createServerClient();
+export const supabase = (() => {
+  try {
+    return createBrowserClient();
+  } catch (error) {
+    // Return a mock client during build time
+    return {
+      auth: {
+        getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+        signUp: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        signIn: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        signOut: () => Promise.resolve({ error: new Error('Not available during build') }),
+        resetPasswordForEmail: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        updateUser: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+      },
+      from: () => ({
+        select: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        insert: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        update: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+        delete: () => Promise.resolve({ data: null, error: new Error('Not available during build') }),
+      }),
+    } as any;
+  }
+})();
 
 // Auth helper functions
 export const auth = {

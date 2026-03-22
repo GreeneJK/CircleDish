@@ -39,7 +39,7 @@ export default function UserMenu() {
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      (event: any, session: any) => {
         if (event === 'SIGNED_OUT') {
           setUser(null);
         } else if (session?.user) {
