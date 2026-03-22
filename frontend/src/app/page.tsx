@@ -15,17 +15,6 @@ export default function Home() {
         <div className="container-max">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             <div className="space-y-6">
-              <div className="flex justify-center mb-6">
-                <Image
-                  src={LOGO_URL}
-                  alt="Circle Dish - Cook. Share. Discover."
-                  width={400}
-                  height={120}
-                  priority
-                  className="w-auto h-24 md:h-32"
-                  unoptimized={!!process.env.NEXT_PUBLIC_STORAGE_URL}
-                />
-              </div>
               <h1 className="text-hero text-primary">
                 Your Family's Living Cookbook
               </h1>
@@ -107,111 +96,6 @@ export default function Home() {
                     <h3 className="font-semibold mb-1">Kitchen-Ready</h3>
                     <p className="text-body text-gray-600">Print-optimized recipes for cooking without devices</p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Showcase */}
-      <section className="section-padding">
-        <div className="container-max">
-          <div className="text-center space-y-8 mb-16">
-            <h2 className="text-section">
-              Built for How Families Actually Cook
-            </h2>
-            <p className="text-body-large text-gray-600 container-medium">
-              Every feature designed to preserve culinary heritage and make sharing effortless
-            </p>
-          </div>
-          
-          <div className="bento-grid">
-            <div className="bento-item">
-              <div className="w-12 h-12 bg-accent-sage rounded-xl flex items-center justify-center mb-4">
-                <span className="text-white text-xl">👥</span>
-              </div>
-              <h3 className="text-card mb-3">The Circle Model</h3>
-              <p className="text-body text-gray-600 mb-4">
-                Create unlimited private groups. Family Circle, Friends Circle, Grilling Circle—each with its own curated collection.
-              </p>
-              <ul className="text-body-small text-gray-600 space-y-2">
-                <li>• Invite via email</li>
-                <li>• Join multiple circles</li>
-                <li>• Circle-specific privacy</li>
-              </ul>
-            </div>
-            
-            <div className="bento-item bento-item-large">
-              <div className="w-12 h-12 bg-accent-terracotta rounded-xl flex items-center justify-center mb-4">
-                <span className="text-white text-xl">📸</span>
-              </div>
-              <h3 className="text-card mb-3">Effortless Upload</h3>
-              <p className="text-body text-gray-600 mb-4">
-                Snap a photo of recipe cards or type directly. Our risk-first approach means getting recipes into the system is frictionless.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Photo Upload</h4>
-                  <p className="text-body-small text-gray-600">Capture handwritten cards instantly</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Smart Entry</h4>
-                  <p className="text-body-small text-gray-600">Structured fields for perfect organization</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bento-item">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
-                <span className="text-white text-xl">💬</span>
-              </div>
-              <h3 className="text-card mb-3">Living Conversations</h3>
-              <p className="text-body text-gray-600 mb-4">
-                Nested comments with photos. Share variations, ask questions, and celebrate successes together.
-              </p>
-              <ul className="text-body-small text-gray-600 space-y-2">
-                <li>• Threaded discussions</li>
-                <li>• Photo comments</li>
-                <li>• Circle-only visibility</li>
-              </ul>
-            </div>
-            
-            <div className="bento-item">
-              <div className="w-12 h-12 bg-surface-blue rounded-xl flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🏷️</span>
-              </div>
-              <h3 className="text-card mb-3">Smart Organization</h3>
-              <p className="text-body text-gray-600 mb-4">
-                Label recipes across circles. AI auto-tagging makes finding the perfect dish effortless.
-              </p>
-              <ul className="text-body-small text-gray-600 space-y-2">
-                <li>• Custom categories</li>
-                <li>• AI-powered tags</li>
-                <li>• Cross-circle search</li>
-              </ul>
-            </div>
-            
-            <div className="bento-item bento-item-large">
-              <div className="w-12 h-12 bg-accent-slate rounded-xl flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🖨️</span>
-              </div>
-              <h3 className="text-card mb-3">Kitchen-Ready Printing</h3>
-              <p className="text-body text-gray-600 mb-4">
-                Clean, standardized recipe format perfect for cooking. No more phones in the kitchen—just printed recipes that work.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">Clean Layout</div>
-                  <p className="text-body-small text-gray-600">Easy-to-read format</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">One-Page</div>
-                  <p className="text-body-small text-gray-600">No flipping pages</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">Notes Space</div>
-                  <p className="text-body-small text-gray-600">Room for adjustments</p>
                 </div>
               </div>
             </div>

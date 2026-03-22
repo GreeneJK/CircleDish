@@ -10,32 +10,28 @@ export default function Header() {
     <header className="bg-background border-b border-gray-100">
       <div className="container-max">
         <div className="flex items-center justify-between py-4">
+          {/* Logo - Left */}
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
             <Image
               src={LOGO_URL}
               alt="Circle Dish - Cook. Share. Discover."
-              width={200}
-              height={60}
+              width={300}
+              height={90}
               priority
-              className="h-12 w-auto"
+              className="h-14 w-auto"
               unoptimized={!!process.env.NEXT_PUBLIC_STORAGE_URL}
             />
           </Link>
-          
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="#features" className="nav-link">
-              Features
-            </Link>
-            <Link href="#about" className="nav-link">
-              About
-            </Link>
+
+          {/* Action Buttons - Right (Desktop Only) */}
+          <div className="hidden md:flex items-center gap-4">
             <button className="btn-secondary">
               Sign In
             </button>
             <button className="btn-primary">
               Get Started
             </button>
-          </nav>
+          </div>
 
           {/* Mobile menu button */}
           <button className="md:hidden p-2">
