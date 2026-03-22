@@ -1,11 +1,31 @@
+import Image from 'next/image';
+import Header from '@/components/Header';
+
+const LOGO_URL = process.env.NEXT_PUBLIC_STORAGE_URL 
+  ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/website-assets/circle-dish-logo.png`
+  : '/images/circle-dish-logo.png'; // Fallback for local dev
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <Header />
+      
       {/* Hero Section */}
       <section className="section-padding">
         <div className="container-max">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <div className="space-y-4">
+            <div className="space-y-6">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src={LOGO_URL}
+                  alt="Circle Dish - Cook. Share. Discover."
+                  width={400}
+                  height={120}
+                  priority
+                  className="w-auto h-24 md:h-32"
+                  unoptimized={!!process.env.NEXT_PUBLIC_STORAGE_URL}
+                />
+              </div>
               <h1 className="text-hero text-primary">
                 Your Family's Living Cookbook
               </h1>

@@ -68,12 +68,25 @@ Circle Dish uses a **Decoupled Monorepo** strategy:
    - Select "Deploy from GitHub repo"
    - Choose your `CircleDish` repository
 
-2. **Configure Service Settings**
-   - **Service Name**: `circle-dish-api`
-   - **Root Directory**: `backend/`
-   - **Start Command**: Railway auto-detects `Procfile` (uses `gunicorn app:app`)
+2. **⚠️ CRITICAL: Configure Root Directory**
+   
+   Railway needs to know this is a monorepo. After creating the project:
+   
+   - Click on your service
+   - Go to **Settings** tab
+   - Scroll to **Source** section
+   - Set **Root Directory** to: `backend`
+   - Click **Save**
+   
+   **This is required for Railway to find your Python files and Procfile!**
 
-3. **Environment Variables**
+3. **Configure Service Settings**
+   - **Service Name**: `circle-dish-api`
+   - **Build Command**: Auto-detected (pip install -r requirements.txt)
+   - **Start Command**: Auto-detected from `Procfile` (gunicorn app:app)
+   - **Python Version**: Auto-detected from `runtime.txt` (3.11.7)
+
+4. **Environment Variables**
    
    Add the following in Railway Dashboard → Variables:
 
