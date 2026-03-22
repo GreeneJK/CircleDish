@@ -57,14 +57,16 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo - Left */}
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image
+            <img
               src={LOGO_URL}
               alt="Circle Dish - Cook. Share. Discover."
-              width={64}
-              height={16}
-              priority
-              className="h-4 w-auto max-h-[16px]"
-              unoptimized={!!process.env.NEXT_PUBLIC_STORAGE_URL}
+              className="h-6 w-auto max-h-[25px] object-contain"
+              style={{ 
+                maxHeight: '25px', 
+                height: '25px',
+                width: 'auto',
+                display: 'block'
+              }}
             />
           </Link>
 
