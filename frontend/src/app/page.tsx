@@ -44,26 +44,26 @@ export default function Home() {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-section">
+              <h2 className="text-section text-left">
                 The Recipe Sharing Problem
               </h2>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">•</div>
                   <div>
                     <h3 className="font-semibold mb-1">Fragmented Sharing</h3>
                     <p className="text-body text-gray-600">Recipes scattered across emails, texts, and social media</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">•</div>
                   <div>
                     <h3 className="font-semibold mb-1">Lost Heritage</h3>
                     <p className="text-body text-gray-600">Grandma's handwritten recipes fading away in drawers</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent-terracotta rounded-full flex items-center justify-center text-white text-sm font-bold">•</div>
                   <div>
                     <h3 className="font-semibold mb-1">No Context</h3>
                     <p className="text-body text-gray-600">Missing stories, variations, and family memories</p>
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
             </div>
             <div className="space-y-6">
-              <h2 className="text-section">
+              <h2 className="text-section text-left">
                 The Circle Dish Solution
               </h2>
               <div className="space-y-4">

@@ -56,43 +56,47 @@ export default function Header() {
       <div className="container-max">
         <div className="flex items-center justify-between py-4">
           {/* Logo - Left */}
-          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <img
-              src={LOGO_URL}
-              alt="Circle Dish - Cook. Share. Discover."
-              className="h-14 w-auto max-h-[60px] object-contain"
-              style={{ 
-                maxHeight: '60px', 
-                height: '60px',
-                width: 'auto',
-                display: 'block'
-              }}
-            />
-          </Link>
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img
+                src={LOGO_URL}
+                alt="Circle Dish - Cook. Share. Discover."
+                className="h-12 w-auto max-h-[50px] object-contain"
+                style={{ 
+                  maxHeight: '50px', 
+                  height: '50px',
+                  width: 'auto',
+                  display: 'block'
+                }}
+              />
+            </Link>
+          </div>
 
           {/* Right Side - Conditional based on auth state */}
-          {user ? (
-            <UserMenu />
-          ) : (
-            <div className="flex items-center gap-4">
-              {/* Desktop Auth Buttons */}
-              <div className="hidden md:flex items-center gap-4">
-                <Link href="/login" className="btn-secondary">
-                  Sign In
-                </Link>
-                <Link href="/signup" className="btn-primary">
-                  Get Started
-                </Link>
-              </div>
+          <div className="flex items-center">
+            {user ? (
+              <UserMenu />
+            ) : (
+              <div className="flex items-center gap-4">
+                {/* Desktop Auth Buttons */}
+                <div className="hidden md:flex items-center gap-6">
+                  <Link href="/login" className="btn-secondary">
+                    Sign In
+                  </Link>
+                  <Link href="/signup" className="btn-primary">
+                    Get Started
+                  </Link>
+                </div>
 
-              {/* Mobile Menu Button */}
-              <button className="md:hidden p-2">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          )}
+                {/* Mobile Menu Button */}
+                <button className="md:hidden p-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>
