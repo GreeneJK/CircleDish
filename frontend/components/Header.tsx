@@ -54,9 +54,9 @@ export default function Header() {
   return (
     <header className="bg-background border-b border-gray-100">
       <div className="container-max">
-        <div className="flex items-center justify-between py-4 px-6">
+        <div className="flex items-center justify-between py-4 px-6" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           {/* Logo - Left */}
-          <div className="flex items-center flex-shrink-0">
+          <div style={{ flexShrink: 0 }}>
             <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
               <img
                 src={LOGO_URL}
@@ -74,13 +74,13 @@ export default function Header() {
           </div>
 
           {/* Right Side - Conditional based on auth state */}
-          <div className="flex items-center justify-end flex-shrink-0 ml-auto">
+          <div style={{ flexShrink: 0, marginLeft: 'auto', display: 'flex', justifyContent: 'flex-end' }}>
             {user ? (
               <UserMenu />
             ) : (
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                 {/* Desktop Auth Buttons */}
-                <div className="hidden md:flex items-center gap-6">
+                <div className="hidden md:flex items-center gap-6" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                   <Link href="/login" className="btn-secondary">
                     Sign In
                   </Link>
