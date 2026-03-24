@@ -13,28 +13,48 @@ export default function Home() {
       {/* Hero Section */}
       <section className="section-padding">
         <div className="container-max">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <div className="space-y-6">
-              <h1 className="text-hero text-primary">
-                Your Family's Living Cookbook
-              </h1>
-              <p className="text-body-large text-gray-600">
-                Stop losing recipes to scattered texts and forgotten recipe cards. 
-                Circle Dish brings your family's culinary heritage into one private, 
-                beautiful space where traditions live and grow.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Copy */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-hero text-primary">
+                  Your Family's Living Cookbook
+                </h1>
+                <p className="text-body-large text-gray-600">
+                  Stop losing recipes to scattered texts and forgotten recipe cards. 
+                  Circle Dish brings your family's culinary heritage into one private, 
+                  beautiful space where traditions live and grow.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="btn-primary text-lg px-8 py-4">
+                  Start Your Circle
+                </button>
+                <button className="btn-secondary text-lg px-8 py-4">
+                  Watch Demo
+                </button>
+              </div>
+              <p className="text-body-small text-gray-600">
+                Free for families • No credit card required • 2-minute setup
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary text-lg px-8 py-4">
-                Start Your Circle
-              </button>
-              <button className="btn-secondary text-lg px-8 py-4">
-                Watch Demo
-              </button>
+            
+            {/* Right Side - Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <img
+                  src="/images/family-cooking.png"
+                  alt="Family cooking together in Circle Dish"
+                  className="rounded-2xl shadow-lg object-cover"
+                  style={{ 
+                    maxHeight: '350px',
+                    height: '350px',
+                    width: 'auto',
+                    maxWidth: '100%'
+                  }}
+                />
+              </div>
             </div>
-            <p className="text-body-small text-gray-600">
-              Free for families • No credit card required • 2-minute setup
-            </p>
           </div>
         </div>
       </section>
