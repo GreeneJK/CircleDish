@@ -54,30 +54,31 @@ export default function Header() {
   return (
     <header className="bg-background border-b border-gray-100">
       <div className="container-max">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-4 px-6">
           {/* Logo - Left */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
               <img
                 src={LOGO_URL}
                 alt="Circle Dish - Cook. Share. Discover."
-                className="h-12 w-auto max-h-[50px] object-contain"
+                className="w-auto object-contain"
                 style={{ 
-                  maxHeight: '50px', 
                   height: '50px',
+                  maxHeight: '50px',
                   width: 'auto',
-                  display: 'block'
+                  display: 'block',
+                  backgroundColor: 'transparent'
                 }}
               />
             </Link>
           </div>
 
           {/* Right Side - Conditional based on auth state */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-end flex-shrink-0 ml-auto">
             {user ? (
               <UserMenu />
             ) : (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 {/* Desktop Auth Buttons */}
                 <div className="hidden md:flex items-center gap-6">
                   <Link href="/login" className="btn-secondary">
