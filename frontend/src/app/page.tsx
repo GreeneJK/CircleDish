@@ -43,7 +43,7 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <img
-                  src="/images/family-cooking.png"
+                  src={process.env.NEXT_PUBLIC_STORAGE_URL ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/website-assets/family-cooking.png` : '/images/family-cooking.png'}
                   alt="Family cooking together in Circle Dish"
                   className="rounded-2xl shadow-lg object-cover"
                   style={{ 
